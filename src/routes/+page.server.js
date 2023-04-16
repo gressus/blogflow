@@ -14,8 +14,8 @@ export async function load({ fetch, locals }) {
   const filteredAndTransformed = files
     .filter(([path]) => langPattern.test(path))
     .map(([path, fileInfo]) => {
-      const furl = path.split("/").slice(-2)[0]; 
-      
+      const furl = path.split("/").slice(-2)[0];
+
       const matchingImageFile = imageFiles.find((imageFilePath) => {
         const imageFurlWithExtension = imageFilePath.split("/").pop();
         const imageFurl = imageFurlWithExtension
@@ -38,7 +38,12 @@ export async function load({ fetch, locals }) {
     .filter((post) => {
       return !post.hidden;
     })
-    .filter((post) => post.starred === true);
+    .filter((post) => post.starred === true)
+    .sort((a, b) => {
+      const aDate = new Date(a.date.split(".").reverse().join("-"));
+      const bDate = new Date(b.date.split(".").reverse().join("-"));
+      return bDate - aDate;
+    });  
 
   return {
     posts: filteredAndTransformed,
