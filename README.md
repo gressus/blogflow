@@ -83,3 +83,4 @@ A special thanks to the Svelte community and everyone who participated in the Sv
 5. Add option to change lang via localstorage
 6. Add option to full static pregeneration (need change routing to /[lang]/)
 7. Add supporting custom themes
+8. Now we have site-based i18n, add git-branch to alternative i18n with path (/[lang]/)
