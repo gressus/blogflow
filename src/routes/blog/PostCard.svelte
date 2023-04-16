@@ -11,9 +11,11 @@
     <img src="{`posts/${furl}/${imageUrl}`}" alt="{title}" width="358" height="201.38" loading="lazy"/>
   {/if}
   <div class="post-info">
-    <h2><a href="{furl}">{title}</a></h2>
-    <p>{date}</p>
-    <p>{excerpt}</p>
+    <a href="{furl}">
+      <h2>{title}</h2>
+      <p>{date}</p>
+      <p>{excerpt}</p>
+    </a>
   </div>
 </div>
 
@@ -51,7 +53,7 @@
     margin-bottom: 0.5rem;
   }
 
-  .post-info h2 a {
+  .post-info a {
     color: inherit;
     text-decoration: none;
   }
