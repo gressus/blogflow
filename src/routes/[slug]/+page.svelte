@@ -22,6 +22,7 @@
   {:else}
     <h1>{post.title}</h1>
   {/if}
+  <p>{post.date}</p>  
   <div class="content">{@html marked(post.content || "")}</div>
 </article>
 
