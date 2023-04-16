@@ -1,38 +1,85 @@
-# create-svelte
+# Multilingual Svelte Markdown Blog
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Welcome to the Multilingual Svelte Markdown Blog, a database-free, user-friendly, and SEO-optimized blogging platform powered by Svelte. This project is designed for creating and managing multilingual blog posts with an intuitive folder structure and responsive mobile-friendly design.
 
-## Creating a project
+## Live Demo
 
-If you're seeing this, you've probably already done this step. Congrats!
+Check out the working demo at [lazarevsky.com](https://www.lazarevsky.com)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Features
 
-# create a new project in my-app
-npm create svelte@latest my-app
+- Multilingual Markdown blog
+- No database required
+- User-friendly organization with a /static folder structure
+- Frontmatter for specifying post title, creation date, tags, visibility, and homepage display
+- Automatic post illustration detection based on the folder name
+- Mobile-friendly responsive design with a burger menu
+- Posts sorted by date on the main page and within the blog
+- Tag support for posts
+- Simple autoposting for scheduling posts on specific dates
+- SEO optimization with Static Site Generation (SSG)
+- Dark and light theme-switching support
+- Easy manage your content via github from any device (if use Vercel or similar CD/CI)
+
+## Installation
+
+1. Clone this repository:
+```
+git clone https://github.com/gressus/blogflow.git
 ```
 
-## Developing
+2. Navigate to the project directory:
+```
+cd blogflow
+```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+3. Install the dependencies:
+```
+npm install
+```
 
-```bash
+4. Run the development server:
+```
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+5. Open your browser and visit `http://localhost:3000`
 
-To create a production version of your app:
+## Deployment
 
-```bash
+To deploy the Multilingual Svelte Markdown Blog, follow these steps:
+
+1. Build the project for production:
+```
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+2. Deploy the `public` folder to your preferred hosting service.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Contributing
+
+Contributions to the Multilingual Svelte Markdown Blog are welcome. Please create an issue to discuss your proposed changes or create a pull request to submit your improvements.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+A special thanks to the Svelte community and everyone who participated in the Svelte hackathon.
+
+## How to translate to you lang
+1. Search "kg" in whole project
+2. Change in found .svelte files "kg" to your lang, add translation
+3. Change all kg.md files in /static folder
+4. Change in hooks.serve.js "kg" to your lang and your sites
+5. Change in LanguageToggle.svelte "KG" to your lang and your sites
+
+## Todo
+1. Optimize image loading
+2. Different image size for preview and for full article
+3. Translate project page
+4. Move translations to separate t.js file, for more friedly start
+5. Add option to change lang via localstorage
+6. Add option to full static pregeneration (need change routing to /[lang]/)
+7. Add supporting custom themes
