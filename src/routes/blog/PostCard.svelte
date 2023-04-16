@@ -4,6 +4,8 @@
   export let excerpt = '';
   export let imageUrl = '';
   export let furl = '';
+  export let starred = false;
+  export let tags = [];  
 </script>
 
 <div class="post-card">

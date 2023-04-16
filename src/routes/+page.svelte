@@ -16,7 +16,7 @@
   const t = translations[data.lang];
 </script>
 
-<AboutSection {...data}/>
+<AboutSection lang={data.lang}/>
 
 <div class="container">
   <h2>{t.popularArticles}</h2>
