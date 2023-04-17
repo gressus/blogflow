@@ -23,7 +23,7 @@
 
   function handleCommentSubmitted(event) {
     const newComment = {
-      id: comments.length + 1, 
+      key: comments.length + 1, 
       name: event.detail.name,
       email: event.detail.email,
       text: event.detail.text,
