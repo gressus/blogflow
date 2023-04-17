@@ -1,5 +1,6 @@
 <script>
   import VoteSection from './VoteSection.svelte';
+  import CommentSection from './CommentSection.svelte';
   import { marked } from 'marked';
   import { error } from "@sveltejs/kit";
 
@@ -30,7 +31,8 @@
   </ul>    
   <p>{post.date}</p>  
   <div class="content">{@html marked(post.content || "")}</div>
-  <VoteSection furl={post.furl} />  
+  <!-- <VoteSection furl={post.furl} />   -->
+  <!-- <CommentSection furl={post.furl} /> -->
 </article>
 
 <svelte:head>

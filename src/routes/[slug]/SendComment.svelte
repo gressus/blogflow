@@ -1,0 +1,91 @@
+<script>
+  import { fetchJsonPUT } from "$lib/utils.js"
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+
+  export let furl
+
+  let name = '';
+  let email = '';
+  let comment = '';
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const formData = {
+      name,
+      email,
+      text: comment
+    };
+
+    dispatch('commentSubmitted', formData);
+
+    let url = `/api/v1/post/${furl}/comments`
+    let res = await fetchJsonPUT(url, formData)
+
+    name = '';
+    email = '';
+    comment = '';    
+  }
+</script>
+<form on:submit="{handleSubmit}" class="send-comment-form">
+  <input type="text" placeholder="Your name" bind:value="{name}" required />
+  <input type="email" placeholder="Your email" bind:value="{email}" required />
+  <textarea placeholder="Your comment" bind:value="{comment}" required></textarea>
+  <button type="submit">Submit Comment</button>
+</form>
+
+<style>
+  .send-comment-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  button {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0059d9;
+  }
+
+  :global(html[data-theme='dark'] .send-comment-form) {
+    color: #ccc;
+  }
+
+  :global(html[data-theme='dark'] .send-comment-form input),
+  :global(html[data-theme='dark'] .send-comment-form textarea) {
+    background-color: #444;
+    border-color: #555;
+  }
+
+  :global(html[data-theme='dark'] .send-comment-form button) {
+    background-color: #444;
+    border-color: #555;
+    color: orange;
+  }
+
+  :global(html[data-theme='dark'] .send-comment-form button:hover) {
+    background-color: #555;
+    border-color: #666;
+  }
+</style>

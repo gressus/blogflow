@@ -6,21 +6,21 @@
 
   let votes = undefined;
 
-  // onMount(async () => {
-  //   let url = `/api/v1/post/${furl}`
-  //   try {
-  //     const response = await fetch(url);
+  onMount(async () => {
+    let url = `/api/v1/post/${furl}`
+    try {
+      const response = await fetch(url);
 
-  //     if (response.ok) {
-  //       let result = await response.json();
-  //       votes = result?.res?.votes || 0
-  //     } else {
-  //       votes = 0
-  //     }    
-  //   } catch(e) {
-  //     console.error(e)
-  //   }
-  // });  
+      if (response.ok) {
+        let result = await response.json();
+        votes = result?.res?.votes || 0
+      } else {
+        votes = 0
+      }    
+    } catch(e) {
+      console.error(e)
+    }
+  });  
 
   async function upvote() {
     console.log('furl ' + furl);
