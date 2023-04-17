@@ -46,6 +46,7 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    color: black;    
   }
 
   textarea {
@@ -67,6 +68,11 @@
   button:hover {
     background-color: #0059d9;
   }
+
+  :global(html[data-theme='dark'] textarea), 
+  :global(html[data-theme='dark'] input) {
+    color: white;
+  }  
 
   :global(html[data-theme='dark'] .send-comment-form) {
     color: #ccc;
