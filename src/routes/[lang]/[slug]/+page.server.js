@@ -2,8 +2,10 @@ import { error } from "@sveltejs/kit";
 import { parseFrontmatter } from "$lib/utils";
 
 export async function load({ fetch, params, locals }) {
+  locals.lang = params.lang;
   const furl = params.slug;
   const lang = locals.lang;
+
   const response = await fetch(`/posts/${furl}/${lang}.md`);
 
   if (!response.ok) {

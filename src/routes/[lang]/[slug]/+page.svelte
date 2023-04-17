@@ -4,39 +4,37 @@
 
   export let data
 
-  let post = data.post
-
-  if (!post) {
+  if (!data.post) {
     throw error(404, "Not found");
   }
 
 </script>
 
 <article>
-  {#if post.imageUrl}
+  {#if data.post.imageUrl}
     <div class="header-image">
-      <img src="{`posts/${post.furl}/${post.imageUrl}`}" alt="{post.title}" loading="lazy"/>
+      <img src="{`/posts/${data.post.furl}/${data.post.imageUrl}`}" alt="{data.post.title}" loading="lazy"/>
       <div class="gradient-overlay"></div>
-      <h1>{post.title}</h1>
+      <h1>{data.post.title}</h1>
     </div>
   {:else}
-    <h1>{post.title}</h1>
+    <h1>{data.post.title}</h1>
   {/if}
-  <p>{post.date}</p>  
-  <div class="content">{@html marked(post.content || "")}</div>
+  <p>{data.post.date}</p>  
+  <div class="content">{@html marked(data.post.content || "")}</div>
 </article>
 
 <svelte:head>
-  <title>{post.title}</title>
-  <meta name="description" content="{post.excerpt}">
-  <meta property="og:title" content="{post.title}">
-  <meta property="og:description" content="{post.excerpt}">
-  <meta property="og:image" content="{post.imageUrl}">
+  <title>{data.post.title}</title>
+  <meta name="description" content="{data.post.excerpt}">
+  <meta property="og:title" content="{data.post.title}">
+  <meta property="og:description" content="{data.post.excerpt}">
+  <meta property="og:image" content="{data.post.imageUrl}">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{post.title}">
-  <meta name="twitter:description" content="{post.excerpt}">
-  <meta name="twitter:image" content="{post.imageUrl}">
+  <meta name="twitter:title" content="{data.post.title}">
+  <meta name="twitter:description" content="{data.post.excerpt}">
+  <meta name="twitter:image" content="{data.post.imageUrl}">
 </svelte:head>
 
 <style>

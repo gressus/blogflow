@@ -18,7 +18,7 @@
     },
   };
 
-  const t = translations[data.lang];  
+  $: t = translations[data.lang];  
 </script>
 
 <div class="blog-page">

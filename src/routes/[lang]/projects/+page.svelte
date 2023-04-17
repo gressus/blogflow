@@ -35,7 +35,7 @@
   <h1>{t.projectsTitle}</h1>
   <div class="projects">
     {#each projects as project (project.title)}
-      <ProjectCard {...project} />
+      <ProjectCard {...project} lang={data.lang}/>
     {/each}
   </div>
 </div>

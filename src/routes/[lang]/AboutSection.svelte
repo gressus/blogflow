@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
 
   export let lang
-
+  $: console.log('lang ' + JSON.stringify(lang));
   const translations = {
     en: {
       title: "Hi, I'm [Your Name]",
@@ -18,13 +18,13 @@
     },
   };
 
-  const t = translations[lang];  
+  $: t = translations[lang];  
 </script>
 
 <div class="about-section">
   <h1>{t.title}</h1>
   <p>{t.description}</p>
-  <button class="learn-more" on:click={() => goto('/about')}>{t.learnMore}</button>
+  <button class="learn-more" on:click={() => goto('/' + lang +'/about')}>{t.learnMore}</button>
 </div>
 
 <style>

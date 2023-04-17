@@ -10,7 +10,7 @@
 
 <div class="post-card">
   {#if imageUrl}
-    <img src="{`posts/${furl}/${imageUrl}`}" alt="{title}" width="358" height="201.38" loading="lazy"/>
+    <img src="{`/posts/${furl}/${imageUrl}`}" alt="{title}" width="358" height="201.38" loading="lazy"/>
   {/if}
   <div class="post-info">
     <a href="{furl}">

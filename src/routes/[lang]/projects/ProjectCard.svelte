@@ -3,6 +3,7 @@
   export let description;
   export let imageUrl;
   export let furl;
+  export let lang;
 </script>
 
 <div class="project-card">
@@ -11,7 +12,7 @@
     <h3>{title}</h3>
     <p>{description}</p>
     <!-- <a href="/projects/{furl}" target="_blank" rel="noopener noreferrer">View Project</a> -->
-    <a href="/projects/{furl}">View Project</a>
+    <a href={'/' + lang + `/projects/${furl}`}>View Project</a>
   </div>
 </div>
 

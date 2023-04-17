@@ -53,7 +53,7 @@
     },
   };
 
-  const t = translations[lang]  
+  $: t = translations[lang]  
 </script>
 
 <header id="header" class:sticky="{isSticky}">
@@ -63,11 +63,11 @@
 
   <nav class:open="{menuOpen}">
     <ul>
-      <li><a href="/">{t.home}</a></li>
-      <li><a href="/about">{t.about}</a></li>
-      <li><a href="/blog">{t.blog}</a></li>
-      <li><a href="/projects">{t.projects}</a></li>
-      <li><a href="/contacts">{t.contacts}</a></li>
+      <li><a href={`/${lang}/`}>{t.home}</a></li>
+      <li><a href={`/${lang}/about`}>{t.about}</a></li>
+      <li><a href={`/${lang}/blog`}>{t.blog}</a></li>
+      <li><a href={`/${lang}/projects`}>{t.projects}</a></li>
+      <li><a href={`/${lang}/contacts`}>{t.contacts}</a></li>
     </ul>
   </nav>
   <div>

@@ -1,12 +1,13 @@
 import { error } from "@sveltejs/kit";
 
-export async function load({ fetch, locals }) {
+export async function load({ fetch, locals, params }) {
+  locals.lang = params.lang;
   let files = Object.entries(
     import.meta.glob("/static/posts/**/*.md", { eager: true })
   );
   let imageFiles = Object.keys(
     import.meta.glob("/static/posts/**/*.{png,jpg,jpeg}", { eager: true })
-  );  
+  );
 
   const lang = locals.lang;
   const langPattern = new RegExp(`/${lang}.md$`);
@@ -36,13 +37,9 @@ export async function load({ fetch, locals }) {
       };
     })
     .filter((post) => {
-      const postDate = new Date(post.date?.split(".").reverse().join("-"));
-      const currentDate = new Date();
-      return postDate <= currentDate;
-    })
-    .filter((post) => {
       return !post.hidden;
     })
+    .filter((post) => post.starred === true)
     .sort((a, b) => {
       const aDate = new Date(a.date.split(".").reverse().join("-"));
       const bDate = new Date(b.date.split(".").reverse().join("-"));

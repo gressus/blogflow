@@ -1,7 +1,7 @@
 <script>
   import AboutSection from './AboutSection.svelte';
   export let data
-
+  
   const translations = {
     en: {
       popularArticles: 'Popular Articles',
@@ -13,7 +13,7 @@
     },
   };
 
-  const t = translations[data.lang];
+  $: t = translations[data.lang];
 </script>
 
 <AboutSection lang={data.lang}/>
@@ -28,7 +28,7 @@
         {/if}
         <h3>{article.title}</h3>
         <p>{article.excerpt}</p>
-        <a class="read-more" href={`/${article.furl}`}>{t.readMore}</a>
+        <a class="read-more" href={'/' + data.lang + `/${article.furl}`}>{t.readMore}</a>
       </div>
     {/each}
   </section>

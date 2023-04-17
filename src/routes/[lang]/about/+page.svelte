@@ -49,7 +49,7 @@ with my friends and family.
     },
   };
 
-  const t = translations[data.lang];  
+  $: t = translations[data.lang];  
 </script>
 
 <section class="about-page">
