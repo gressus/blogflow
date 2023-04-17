@@ -17,7 +17,7 @@ Check out the working demo at [lazarevsky.com](https://www.lazarevsky.com)
 - Posts sorted by date on the main page and within the blog
 - Tag support for posts
 - Simple autoposting for scheduling posts on specific dates
-- SEO optimization with Static Site Generation (SSG)
+- SEO optimization with Server Site Generation (SSG)
 - Dark and light theme-switching support
 - Easy manage your content via github from any device (if use Vercel or similar CD/CI)
 – Two type of i18n: 1) domain-based: site.com & site.kg, 2) path-based: site.org/en & site.org/kg
