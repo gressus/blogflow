@@ -5,7 +5,7 @@ export const handle = async ({ event, resolve }) => {
     case "yoursite.kg":
     case "yoursite.kg":
     case "localhost":
-      event.locals.lang = "kg";
+      event.locals.lang = "en";
       break;
     case "yoursite.com":
       event.locals.lang = "kg";
