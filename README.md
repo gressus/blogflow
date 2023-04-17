@@ -111,6 +111,10 @@ In this example we will use deta.space, you can use your own
 
 ## Long Advanced SPAM detection
 1. Uncomment block "Advanced SPAM detection" in src/routes/api/v1/post/[furl]/comments/+server.js
+- Note, that long advanced SPAM detection may be timeouted, if chatGPT worked more than 60 sec.
+- And this is only premoderation feature, because of not so good, as expected. But may be usefull, as secondary helper for site owner.
+- In demo purposes spam comments shows in red. In real production you should hide them, of course.
+- Nearly 15:00 GMT is worst time for chatGPT, almost all requests timeouted
 
 ## Todo
 1. Optimize image loading
@@ -124,3 +128,4 @@ In this example we will use deta.space, you can use your own
 9. Add meta-tag to all pages (not only for blog one)
 10. Set limits: by ip, timing, size
 11. Mark post SPAM not only after page reload
+12. If long advanced SPAM detection fails due to timeout – mark this messages as suspicious
