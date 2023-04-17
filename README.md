@@ -4,7 +4,9 @@ Welcome to the Multilingual Svelte Markdown Blog, a database-free, user-friendly
 
 ## Live Demo
 
-Check out the production working demo at [lazarevsky.com](https://www.lazarevsky.com) (with all features, described below)
+Check out the production demo at [lazarevsky.com](https://www.lazarevsky.com) (with all features + advanced (Vote, Comments, AI auto premoderation))
+
+Simplified demo w/o advanced features at [blogflow-eight.vercel.app](blogflow-eight.vercel.app)
 
 ## Features
 
@@ -121,3 +123,4 @@ In this example we will use deta.space, you can use your own
 ~~8. (done) Now we have domain-based i18n, add git-branch to alternative i18n with path (/[lang]/)~~
 9. Add meta-tag to all pages (not only for blog one)
 10. Set limits: by ip, timing, size
+11. Mark post SPAM not only after page reload
