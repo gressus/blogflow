@@ -20,6 +20,7 @@ Check out the working demo at [lazarevsky.com](https://www.lazarevsky.com)
 - SEO optimization with Static Site Generation (SSG)
 - Dark and light theme-switching support
 - Easy manage your content via github from any device (if use Vercel or similar CD/CI)
+– Two type of i18n: 1) domain-based: site.com & site.kg, 2) path-based: site.org/en & site.org/kg
 
 ## Installation
 
@@ -72,8 +73,15 @@ A special thanks to the Svelte community and everyone who participated in the Sv
 1. Search "kg" in whole project
 2. Change in found .svelte files "kg" to your lang, add translation
 3. Change all kg.md files in /static folder
-4. Change in hooks.serve.js "kg" to your lang and your sites
+4. Change in hooks.serve.js "kg" to your lang and your sites (for Domain-based i18n)
 5. Change in LanguageToggle.svelte "KG" to your lang and your sites
+
+## Domain-based i18n: site.com & site.kg
+Default we have domain-based i18n. One domain is for one language, another domain is for another language.
+"Change lang" button redirect from one domain to another.
+
+## Path-based i18n: site.org/en & site.org/kg
+If your want change type of i18n to path-based routing, plz, checkout to pathbased-i18n branch
 
 ## Todo
 1. Optimize image loading
