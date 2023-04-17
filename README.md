@@ -88,7 +88,8 @@ If your want change type of i18n to path-based routing, plz, checkout to pathbas
 2. Different image size for preview and for full article
 3. Translate project page
 4. Move translations to separate t.js file, for more friedly start
-5. Add option to change lang via localstorage
-6. Add option to full static pregeneration (need change routing to /[lang]/)
+~~5. (done) Add option to change lang via localstorage or via domain (/en)~~
+6. Add option to full static pregeneration (only for domain-based i18n, because need change routing to /[lang]/)
 7. Add supporting custom themes
-8. Now we have site-based i18n, add git-branch to alternative i18n with path (/[lang]/)
+~~8. (done) Now we have domain-based i18n, add git-branch to alternative i18n with path (/[lang]/)~~
+9. Add meta-tag to all pages (not only for blog one)
