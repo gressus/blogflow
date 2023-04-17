@@ -26,12 +26,12 @@ Simplified demo w/o advanced features at [blogflow-eight.vercel.app](blogflow-ei
 
 ## Advanced Features (required DB)
 
-– Up & Down voting for post (for this feature, you really need DB, we use for example Deta)
-– Comment posts
+- Up & Down voting for post (for this feature, you really need DB, we use for example Deta)
+- Comment posts
 
 ## Super Advanced Features with AI (integration with chatGPT)
 
-– Very Quick Basic auto moderation via chatGPT (1-5 sec. average)
+- Very Quick Basic auto moderation via chatGPT (1-5 sec. average)
 - Long Advanced SPAM detection (takes 20-60 sec. average, you need Vercel Pro or similar for long background tasks)
 
 ## Installation
