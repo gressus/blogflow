@@ -3,6 +3,18 @@
   export let description;
   export let imageUrl;
   export let furl;
+  export let lang;
+
+  const translations = {
+    en: {
+      viewProject: 'View Project',
+    },
+    kg: {
+      viewProject: 'Долбоорду көрүү...',
+    },
+  };
+
+  $: t = translations[lang];
 </script>
 
 <div class="project-card">
@@ -11,7 +23,7 @@
     <h3>{title}</h3>
     <p>{description}</p>
     <!-- <a href="/projects/{furl}" target="_blank" rel="noopener noreferrer">View Project</a> -->
-    <a href="/projects/{furl}">View Project</a>
+    <a href="/projects/{furl}">{t.viewProject}</a>
   </div>
 </div>
 
