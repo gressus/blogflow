@@ -22,6 +22,32 @@ export async function PUT({ fetch, request, params, locals }) {
     let comment = await request.json();
     comment.created_at = Date.now();
     comment.furl = furl;
+
+    if (import.meta.env.VITE_OPENAI_API_KEY) {
+      let body = {
+        input: comment.text,
+      };
+      let OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
+      var options = {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
+        },
+      };
+      const res = await fetch("https://api.openai.com/v1/moderations", options);
+      var responseCode = res.status;
+      var responseJSON = await res.json();
+      const flagged = responseJSON.results[0].flagged;
+
+      console.log("flagged " + JSON.stringify(flagged));
+
+      if (flagged) {
+        throw error(406);
+      }
+    }
+
     const deta = Deta(import.meta.env.VITE_DETA_PROJECT)
     const dbBlockInfo = deta.Base(`post_comments_${locals.lang}`);
     let item = await dbBlockInfo.put(comment);

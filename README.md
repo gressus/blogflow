@@ -26,6 +26,9 @@ Check out the working demo at [lazarevsky.com](https://www.lazarevsky.com)
 – Up & Down voting for post (for this feature, you really need DB, we use for example Deta)
 – Comment posts
 
+## Super Advanced Features
+– Basic auto moderation via chatGPT
+
 ## Installation
 
 1. Clone this repository:
@@ -97,6 +100,9 @@ In this example we will use deta.space, you can use your own
 6. Go to deta.space site go to Builder, go to your project, generate KEY
 7. Rename _env to .env and paste key from Deta
 8. Uncomment VoteSection and CommentSection in /routes/[slug]/+page.svelte
+
+## Super-advanced (integration with chatGPT)
+1. Add to .env VITE_OPENAI_API_KEY= you openai key
 
 ## Todo
 1. Optimize image loading
