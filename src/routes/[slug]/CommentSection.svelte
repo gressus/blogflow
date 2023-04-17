@@ -8,6 +8,8 @@
 
   let comments = []
 
+  $: sorted_comments = comments.sort((a, b) => b.created_at - a.created_at);
+
   onMount(async () => {
     let url = `/api/v1/post/${furl}/comments`
     const response = await fetch(url);
@@ -27,6 +29,7 @@
       name: event.detail.name,
       email: event.detail.email,
       text: event.detail.text,
+      created_at: event.detail.created_at,
     };
     comments = [...comments, newComment];
   }  
@@ -35,7 +38,7 @@
 <div class="comment-section">
   <SendComment furl={furl} on:commentSubmitted="{handleCommentSubmitted}"/>
   <h2>Comments</h2>
-  {#each comments as comment (comment.key)}
+  {#each sorted_comments as comment (comment.key)}
     <CommentCard {...comment} />
   {/each}
 </div>

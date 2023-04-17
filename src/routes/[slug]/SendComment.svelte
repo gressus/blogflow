@@ -14,7 +14,8 @@
     const formData = {
       name,
       email,
-      text: comment
+      text: comment,
+      created_at: Date.now()
     };
 
     dispatch('commentSubmitted', formData);

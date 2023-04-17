@@ -4,11 +4,32 @@
   export let email;
   export let text;
   export let spam;
+  export let created_at;
+
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
+
+  function pad(number) {
+    return number < 10 ? '0' + number : number;
+  }
+
+  const day = pad(date.getDate());
+  const month = pad(date.getMonth() + 1);
+  const year = date.getFullYear();
+  const hours = pad(date.getHours());
+  const minutes = pad(date.getMinutes());
+
+  return `${day}-${month}-${year} ${hours}:${minutes}`;
+}
+
 </script>
 
 <div class="comment-card" class:spam={spam}>
   <h3>{name}</h3>
   <p>{text}</p>
+  {#if created_at}
+    <div class="date">{formatDate(created_at)}</div>
+  {/if}
 </div>
 
 <style>
@@ -29,4 +50,9 @@
   .comment-card.spam {
     background-color: #ff5555;
   }  
+
+  .date {
+    font-size: small;
+    color: grey;
+  }
 </style>
