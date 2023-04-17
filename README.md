@@ -4,7 +4,7 @@ Welcome to the Multilingual Svelte Markdown Blog, a database-free, user-friendly
 
 ## Live Demo
 
-Check out the working demo at [lazarevsky.com](https://www.lazarevsky.com)
+Check out the production working demo at [lazarevsky.com](https://www.lazarevsky.com) (with all features, described below)
 
 ## Features
 
@@ -23,11 +23,14 @@ Check out the working demo at [lazarevsky.com](https://www.lazarevsky.com)
 – Two type of i18n: 1) domain-based: site.com & site.kg, 2) path-based: site.org/en & site.org/kg
 
 ## Advanced Features (required DB)
+
 – Up & Down voting for post (for this feature, you really need DB, we use for example Deta)
 – Comment posts
 
-## Super Advanced Features
-– Basic auto moderation via chatGPT
+## Super Advanced Features with AI (integration with chatGPT)
+
+– Very Quick Basic auto moderation via chatGPT (1-5 sec. average)
+- Long Advanced SPAM detection (takes 20-60 sec. average, you need Vercel Pro or similar for long background tasks)
 
 ## Installation
 
@@ -103,6 +106,9 @@ In this example we will use deta.space, you can use your own
 
 ## Super-advanced (integration with chatGPT)
 1. Add to .env VITE_OPENAI_API_KEY= you openai key
+
+## Long Advanced SPAM detection
+1. Uncomment block "Advanced SPAM detection" in src/routes/api/v1/post/[furl]/comments/+server.js
 
 ## Todo
 1. Optimize image loading

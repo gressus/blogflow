@@ -3,9 +3,10 @@
   export let name;
   export let email;
   export let text;
+  export let spam;
 </script>
 
-<div class="comment-card">
+<div class="comment-card" class:spam={spam}>
   <h3>{name}</h3>
   <p>{text}</p>
 </div>
@@ -24,4 +25,8 @@
   :global(html[data-theme='dark'] .comment-card) {
     border-color: #444;
   }
+
+  .comment-card.spam {
+    background-color: #ff5555;
+  }  
 </style>

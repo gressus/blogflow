@@ -36,7 +36,7 @@ export async function PUT({ fetch, request, params, locals }) {
           Authorization: `Bearer ${OPENAI_API_KEY}`,
         },
       };
-      const res = await fetch("https://api.openai.com/v1/moderations", options);
+      var res = await fetch("https://api.openai.com/v1/moderations", options);
       var responseCode = res.status;
       var responseJSON = await res.json();
       const flagged = responseJSON.results[0].flagged;
@@ -46,6 +46,34 @@ export async function PUT({ fetch, request, params, locals }) {
       if (flagged) {
         throw error(406);
       }
+
+      // Advanced SPAM detection
+      // let messages = [
+      //   { role: "user", content: comment.text },
+      //   {
+      //     role: "system",
+      //     content: `You are a moderator. You can answer only: yes or no. Is this message similar to SPAM?`,
+      //   },
+      // ];
+      // var formDataForToken = {
+      //   model: "gpt-3.5-turbo",
+      //   messages: messages,
+      // };
+      // var chatUrl = "https://api.openai.com/v1/chat/completions";
+      // options = {
+      //   method: "POST",
+      //   body: JSON.stringify(formDataForToken),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     Authorization: `Bearer ${OPENAI_API_KEY}`,
+      //   },
+      // };
+      // res = await fetch(chatUrl, options);
+      // responseCode = res.status;
+      // responseJSON = await res.json();
+      // let text = responseJSON["choices"][0]["message"]["content"];
+      // console.log("text " + text);
+      // comment.spam = text.toLowerCase().includes("yes".toLowerCase());
     }
 
     const deta = Deta(import.meta.env.VITE_DETA_PROJECT)
