@@ -21,6 +21,7 @@ Check out the working demo at [lazarevsky.com](https://www.lazarevsky.com)
 - Dark and light theme-switching support
 - Easy manage your content via github from any device (if use Vercel or similar CD/CI)
 – Two type of i18n: 1) domain-based: site.com & site.kg, 2) path-based: site.org/en & site.org/kg
+– Up & Down voting for post (for this feature, you really need DB, we use for example Deta)
 
 ## Installation
 
@@ -82,6 +83,17 @@ Default we have domain-based i18n. One domain is for one language, another domai
 
 ## Path-based i18n: site.org/en & site.org/kg
 If your want change type of i18n to path-based routing, plz, checkout to pathbased-i18n branch
+
+## Set-up up and down voting (really need DB)
+In this example we will use deta.space, you can use your own
+1. Register on deta.space
+2. Open terminal and go to folder /detabd/myblog
+3. Write `space login` and `space new`
+4. Wait until you project initiated
+5. Write `space push`
+6. Go to deta.space site go to Builder, go to your project, generate KEY
+7. Rename _env to .env and paste key from Deta
+8. Uncomment onMount in /routes/[slug]/VoteSection.svelte
 
 ## Todo
 1. Optimize image loading

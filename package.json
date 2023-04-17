@@ -17,7 +17,8 @@
 	},
 	"dependencies": {
 		"localforage": "^1.10.0",
-		"marked": "^4.3.0"
+		"marked": "^4.3.0",
+		"deta": "next"
 	},	
 	"type": "module"
 }
