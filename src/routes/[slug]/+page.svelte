@@ -22,6 +22,11 @@
   {:else}
     <h1>{post.title}</h1>
   {/if}
+  <ul class="tags">
+    {#each post.tags as tag}
+      <li>#{tag}</li>
+    {/each}
+  </ul>    
   <p>{post.date}</p>  
   <div class="content">{@html marked(post.content || "")}</div>
 </article>
@@ -102,4 +107,18 @@
     margin-top: 3rem;
     line-height: 1.75;
   }    
+
+  ul.tags {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tags li {
+    display: inline-block;
+    font-size: smaller;
+    font-style: italic;
+    margin-right: 5px;
+    color: grey;
+  }      
 </style>

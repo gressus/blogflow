@@ -28,6 +28,11 @@
         {/if}
         <h3>{article.title}</h3>
         <p>{article.excerpt}</p>
+        <ul class="tags">
+          {#each article.tags as tag}
+            <li>#{tag}</li>
+          {/each}
+        </ul>        
         <a class="read-more" href={`/${article.furl}`}>{t.readMore}</a>
       </div>
     {/each}
@@ -80,4 +85,18 @@
   .container {
     margin-left: 20px;
   }
+
+  ul.tags {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tags li {
+    display: inline-block;
+    font-size: smaller;
+    font-style: italic;
+    margin-right: 5px;
+    color: grey;
+  }  
 </style>

@@ -15,8 +15,13 @@
   <div class="post-info">
     <a href="{furl}">
       <h2>{title}</h2>
-      <p>{date}</p>
+      <p class="date">{date}</p>
       <p>{excerpt}</p>
+      <ul class="tags">
+        {#each tags as tag}
+          <li>#{tag}</li>
+        {/each}
+      </ul>      
     </a>
   </div>
 </div>
@@ -63,4 +68,23 @@
   .post-info p {
     margin: 0;
   }
+
+  .post-info .date {
+    color: grey;
+  }
+
+  ul.tags {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .tags li {
+    display: inline-block;
+    font-size: smaller;
+    font-style: italic;
+    margin-right: 5px;
+    color: grey;
+  }      
 </style>
