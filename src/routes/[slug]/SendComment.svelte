@@ -1,13 +1,14 @@
 <script>
-  import { fetchJsonPUT } from "$lib/utils.js"
-  import { createEventDispatcher } from 'svelte';
+  import { fetchJsonPUT } from "$lib/utils.js";
+  import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
-  export let furl
+  export let furl;
 
-  let name = '';
-  let email = '';
-  let comment = '';
+  let name = "";
+  let email = "";
+  let comment = "";
+  let isSubmitting = false;
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -15,24 +16,32 @@
       name,
       email,
       text: comment,
-      created_at: Date.now()
+      created_at: Date.now(),
     };
 
-    dispatch('commentSubmitted', formData);
+    dispatch("commentSubmitted", formData);
 
-    let url = `/api/v1/post/${furl}/comments`
-    let res = await fetchJsonPUT(url, formData)
+    isSubmitting = true;
+    try {
+      let url = `/api/v1/post/${furl}/comments`;
+      let res = await fetchJsonPUT(url, formData);
+    } catch (e) {
+      console.log("e " + JSON.stringify(e));
+    }
+    isSubmitting = false;
 
-    name = '';
-    email = '';
-    comment = '';    
+    name = "";
+    email = "";
+    comment = "";
   }
 </script>
 <form on:submit="{handleSubmit}" class="send-comment-form">
   <input type="text" placeholder="Your name" bind:value="{name}" required />
-  <input type="email" placeholder="Your email" bind:value="{email}" required />
+  <input type="email" placeholder="Your email (will be hidden, no one will be able to see)" bind:value="{email}" required />
   <textarea placeholder="Your comment" bind:value="{comment}" required></textarea>
-  <button type="submit">Submit Comment</button>
+  <button type="submit" disabled="{isSubmitting}">
+    {isSubmitting ? "Submitting..." : "Submit Comment"}
+  </button>
 </form>
 
 <style>
@@ -47,7 +56,7 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    color: black;    
+    color: black;
   }
 
   textarea {
@@ -73,7 +82,7 @@
   :global(html[data-theme='dark'] textarea), 
   :global(html[data-theme='dark'] input) {
     color: white;
-  }  
+  }
 
   :global(html[data-theme='dark'] .send-comment-form) {
     color: #ccc;
