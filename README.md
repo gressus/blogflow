@@ -7,7 +7,7 @@ Welcome to the Multilingual Svelte Markdown Blog, a database-free, user-friendly
 Check out the production demo at [lazarevsky.com](https://www.lazarevsky.com) (with all features + advanced (Vote, Comments, AI auto premoderation: quick and long)). 
 This is example of domain-based i18n: lazarevsky.com / igor.kg
 
-Simplified demo w/o advanced features at [blogflow-eight.vercel.app](blogflow-eight.vercel.app). 
+Simplified demo w/o advanced features at [https://blogflow-eight.vercel.app](https://blogflow-eight.vercel.app). 
 
 ## Features
 
@@ -23,7 +23,7 @@ Simplified demo w/o advanced features at [blogflow-eight.vercel.app](blogflow-ei
 - SEO optimization with Server Site Generation (SSG)
 - Dark and light theme-switching support
 - Easy manage your content via github from any device (if use Vercel or similar CD/CI)
-– Two type of i18n: 1) domain-based: site.com & site.kg, 2) path-based: site.org/en & site.org/kg
+- Two type of i18n: 1) domain-based: site.com & site.kg, 2) path-based: site.org/en & site.org/kg
 
 ## Advanced Features (required DB)
 
@@ -34,11 +34,11 @@ Simplified demo w/o advanced features at [blogflow-eight.vercel.app](blogflow-ei
 
 - Very Quick Basic auto moderation via chatGPT (1-5 sec. average), available on basic Vercel plan or similar. Only need your openai key.
 
-If a post does not pass basic automatic moderation, it will be shown to the user as added, but will not be saved and will simply disappear when reloading the page
+_If a post does not pass basic automatic moderation, it will be shown to the user as added, but will not be saved and will simply disappear when reloading the page_
 
 - Long Advanced SPAM detection (takes 20-60 sec. average, you need Vercel Pro or similar for long background tasks).
 
-If a post does not pass advanced moderation, it will be shown to the user as added, and will be marked red when reloading the page
+_If a post does not pass advanced moderation, it will be shown to the user as added, and will be marked red when reloading the page_
 
 ## Small Features
 - Block Send button, while submitting
@@ -47,7 +47,6 @@ If a post does not pass advanced moderation, it will be shown to the user as add
 - Dynamically loading comments & votes, after SSG
 - Dynamically show or hide cover image for post if present in the folder
 - Support different extension for cover image (jpg, jpeg, png)
-- Sort posts by date
 
 ## How to write post
 1. Create folder in `/static/posts` with furl of your post (ex: `my-first-post`)
@@ -66,14 +65,14 @@ hidden: true
 4. Use `starred: true`, if you want show your post at main page
 5. Use `hidden: true`, if you want hide your post at all
 6. Create `<lang>.md` in another language
-7. Create image cover for your post with name `furl.jpg` or `furl.png` (ex: `my-first-post.jpg`) in the same folder
+7. Create image cover for your post with name `<furl>.jpg` or `<furl>.png` (ex: `my-first-post.jpg`) in the same folder
 8. **Profit!**
 
 ## How autoposting 
 It's easy. Just create post with `date` in a future.
-No redeployment required!
+_No redeployment required!_
 
-So you can create 7 posts once a week and schedule them. **One deployment a week** 👍
+So, for example, you can create 7 posts once a week and schedule them. **One deployment a week** 👍
 
 ## Installation
 
@@ -141,19 +140,19 @@ If your want change type of i18n to path-based routing, plz, checkout to `pathba
 ## Set-up up and down voting & comments (really need DB)
 In this example we will use deta.space, you can use your own
 1. Register on deta.space
-2. Open terminal and go to folder /detabd/myblog
+2. Open terminal and go to folder `/detabd/myblog`
 3. Write `space login` and `space new`
 4. Wait until you project initiated
 5. Write `space push`
 6. Go to deta.space site go to Builder, go to your project, generate KEY
-7. Rename _env to .env and paste key from Deta
-8. Uncomment VoteSection and CommentSection in /routes/[slug]/+page.svelte
+7. Rename `_env` to `.env` and paste key from Deta
+8. Uncomment `VoteSection` and `CommentSection` in `/routes/[slug]/+page.svelte`
 
 ## Super-advanced (integration with chatGPT): Quck basic auto moderation
-1. Add to .env VITE_OPENAI_API_KEY= you openai key
+1. Add to `.env` `VITE_OPENAI_API_KEY=` you openai key
 
 ## Long Advanced SPAM detection
-1. Uncomment block "Advanced SPAM detection" in src/routes/api/v1/post/[furl]/comments/+server.js
+1. Uncomment block "Advanced SPAM detection" in `src/routes/api/v1/post/[furl]/comments/+server.js`
 - Note, that long advanced SPAM detection may be timeouted, if chatGPT worked more than 60 sec.
 - And this is only premoderation feature, because of not so good, as expected. But may be usefull, as secondary helper for site owner.
 - In demo purposes spam comments shows in red. In real production you should hide them, of course.
