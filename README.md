@@ -24,6 +24,7 @@ Simplified demo w/o advanced features at [https://blogflow-sveltehack.vercel.app
 - Dark and light theme-switching support
 - Easy manage your content via github from any device (if use Vercel or similar CD/CI)
 - Two type of i18n: 1) domain-based: site.com & site.kg, 2) path-based: site.org/en & site.org/kg
+- On path-based i18n changes the language of the current page (without redirecting to the home page in another language)
 
 ## Advanced Features (required DB)
 
