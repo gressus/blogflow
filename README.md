@@ -34,9 +34,11 @@ This is example of path-based i18n: `yoursite.org/en` / `yoursite.org/kg`
 ## Advanced Features (required DB)
 
 For this feature and further, you really need DB, we use for example `Deta`:
+
 - Up & Down voting for post 
 - Comment posts
-- Preventing multiple voting by one user
+- Preventing multiple voting by one user (only front)
+- Protection from comments longer than 1000 characters (at the frontend and backend)
 
 ## Super Advanced Features with AI (integration with chatGPT)
 
