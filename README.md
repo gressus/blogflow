@@ -1,18 +1,18 @@
-# Multilingual Svelte Markdown Blog (NoDB / DB & AI powered)
+# Multilingual Svelte Markdown Blog (NoDB / DB & AI-Powered)
 
 Welcome to the Multilingual Svelte Markdown Blog, a database-free, user-friendly, and SEO-optimized blogging platform powered by Svelte. This project is designed for creating and managing multilingual blog posts with an intuitive folder structure and responsive mobile-friendly design.
 
-With DB you obtain additional features like: votes, comments, and two types of auto moderation, powered by AI
+With DB, you obtain additional features like: votes, comments, and two types of auto-moderation, powered by AI.
 
 ## Live Demo
 
-Check out the production demo at [lazarevsky.com](https://www.lazarevsky.com) (with all features + advanced (Vote, Comments, AI auto premoderation: quick and long)). 
-This is example of domain-based i18n: `lazarevsky.com` / `igor.kg`
+Check out the production demo at [lazarevsky.com](https://www.lazarevsky.com) (with all features + advanced (Vote, Comments, AI auto premoderation: quick and long)).
+This is an example of domain-based i18n: `lazarevsky.com` / `igor.kg`
 
-Simplified demo w/o advanced features at [https://blogflow-sveltehack.vercel.app/](https://blogflow-sveltehack.vercel.app/). 
+Simplified demo without advanced features at [https://blogflow-sveltehack.vercel.app/](https://blogflow-sveltehack.vercel.app/).
 
-Simplified demo w/o advanced features at [https://blogflow-pathbasedi18n.vercel.app/](https://blogflow-pathbasedi18n.vercel.app/). 
-This is example of path-based i18n: `yoursite.org/en` / `yoursite.org/kg`
+Simplified demo without advanced features at [https://blogflow-pathbasedi18n.vercel.app/](https://blogflow-pathbasedi18n.vercel.app/).
+This is an example of path-based i18n: `yoursite.org/en` / `yoursite.org/kg`
 
 ## Features
 
@@ -27,41 +27,42 @@ This is example of path-based i18n: `yoursite.org/en` / `yoursite.org/kg`
 - Simple autoposting for scheduling posts on specific dates, no redeployment required
 - SEO optimization with Server Site Generation (SSG)
 - Dark and light theme-switching support
-- Easy manage your content via github from any device (if use Vercel or similar CD/CI)
-- Two type of i18n: 1) domain-based: site.com & site.kg, 2) path-based: site.org/en & site.org/kg
-- On path-based i18n changes the language of the current page (without redirecting to the home page in another language)
+- Easily manage your content via GitHub from any device (if using Vercel or similar CD/CI)
+- Two types of i18n: 1) domain-based: site.com & site.kg, 2) path-based: site.org/en & site.org/kg
+- On path-based i18n, changes the language of the current page (without redirecting to the home page in another language)
 
-## Advanced Features (required DB)
+## Advanced Features (DB required)
 
-For this feature and further, you really need DB, we use for example `Deta`:
+For these features and more, you will need a DB. We use `Deta` for example:
 
-- Up & Down voting for post 
-- Comment posts
-- Preventing multiple voting by one user (only front)
-- Protection from comments longer than 1000 characters (at the frontend and backend)
+- Up & Down voting for posts
+- Commenting on posts
+- Preventing multiple voting by one user (front-end only)
+- Protection from comments longer than 1000 characters (at both the frontend and backend)
 
-## Super Advanced Features with AI (integration with chatGPT)
+## Super Advanced Features with AI (integration with ChatGPT)
 
-- Very Quick Basic auto moderation via chatGPT (1-5 sec. average), available on basic Vercel plan or similar. Only need your openai key.
+- Very Quick Basic auto-moderation via ChatGPT (1-5 sec. average), available on the basic Vercel plan or similar. Only your OpenAI key is needed.
 
-_If a post does not pass basic automatic moderation, it will be shown to the user as added, but will not be saved and will simply disappear when reloading the page_
+_If a post does not pass basic automatic moderation, it will be shown to the user as added, but will not be saved and will simply disappear upon reloading the page._
 
 - Long Advanced SPAM detection (takes 20-60 sec. average, you need Vercel Pro or similar for long background tasks).
 
-_If a post does not pass advanced moderation, it will be shown to the user as added, and will be marked red when reloading the page_
+_If a post does not pass advanced moderation, it will be shown to the user as added, and will be marked red when reloading the page._
 
 ## Small Features
-- Block Send button, while submitting
+
+- Block Send button while submitting
 - Auto change meta lang tag for i18n
-- Added meta-tags for post page (todo: other pages)
+- Added meta-tags for post pages (todo: other pages)
 - Dynamically loading comments & votes, after SSG
 - Dynamically show or hide cover image for post if present in the folder
-- Support different extension for cover image (jpg, jpeg, png)
+- Support for different cover image extensions (jpg, jpeg, png)
 
-## How to write post
-1. Create folder in `/static/posts` with furl of your post (ex: `my-first-post`)
-2. Create `en.md` file (in English)
-3. At the top of the file use *frontmatter*:
+## How to Write a Post
+1. Create a folder in `/static/posts` with the URL-friendly name of your post (e.g., `my-first-post`)
+2. Create an `en.md` file (in English)
+3. At the top of the file, use *frontmatter*:
 ```
 ---
 title: 'Title of your post'
@@ -72,21 +73,22 @@ starred: true
 hidden: true
 ---
 ```
-4. Use `starred: true`, if you want show your post at main page
-5. Use `hidden: true`, if you want hide your post at all
+4. Use `starred: true` if you want to show your post on the main page
+5. Use `hidden: true` if you want to hide your post entirely
 6. Create `<lang>.md` in another language
-7. Create image cover for your post with name `<furl>.jpg` or `<furl>.png` (ex: `my-first-post.jpg`) in the same folder
+7. Create an image cover for your post with the name `<furl>.jpg` or `<furl>.png` (e.g., `my-first-post.jpg`) in the same folder
 8. **Profit!**
 
-## How autoposting 
-It's easy. Just create post with `date` in a future.
+## How Autoposting Works
+It's easy. Just create a post with a `date` set in the future.
 _No redeployment required!_
 
-So, for example, you can create 7 posts once a week and schedule them. **One deployment a week** 👍
+For example, you can create 7 posts once a week and schedule them. **One deployment a week** 👍
 
 ## Installation
 
 1. Clone this repository:
+
 ```
 git clone https://github.com/gressus/blogflow.git
 ```
@@ -131,54 +133,61 @@ This project is licensed under the [MIT License](LICENSE).
 
 A special thanks to the Svelte community and everyone who participated in the Svelte hackathon.
 
-## How to translate to you lang
-In demo example we use pair: `en`/`kg` languages (`English` and `Kyrgyz` languages)
+## How to Translate to Your Language
 
-1. Search `"kg"` in whole project
-2. Change in found .svelte files `"kg"` to your lang, add translation
-3. Change all `kg.md` files in `/static` folder
-4. Change in `hooks.serve.js` `"kg"` to your lang and your sites (for Domain-based i18n)
-5. Change in `LanguageToggle.svelte` `"KG"` to your lang and your sites
+In the demo example, we use the pair: `en`/`kg` languages (`English` and `Kyrgyz` languages).
+
+1. Search for `"kg"` throughout the entire project
+2. In the found .svelte files, change `"kg"` to your language and add translations
+3. Change all `kg.md` files in the `/static` folder
+4. Modify `hooks.serve.js`, replacing `"kg"` with your language and your sites (for domain-based i18n)
+5. Change `"KG"` to your language and your sites in `LanguageToggle.svelte`
 
 ## Domain-based i18n: site.com & site.kg
-Default we have domain-based i18n. One domain is for one language, another domain is for another language.
-"Change lang" button redirect from one domain to another.
+
+By default, we have domain-based i18n. One domain is for one language, and another domain is for another language.
+The "Change lang" button redirects from one domain to another.
 
 ## Path-based i18n: site.org/en & site.org/kg
-If your want change type of i18n to path-based routing, plz, checkout to `pathbased-i18n` branch
 
-## Set-up up and down voting & comments (really need DB)
-In this example we will use deta.space, you can use your own
+If you want to change the type of i18n to path-based routing, please checkout the `pathbased-i18n` branch.
+
+## Set Up Up and Down Voting & Comments (Requires a Database)
+
+In this example, we will use deta.space, but you can use your own.
 1. Register on deta.space
-2. Open terminal and go to folder `/detabd/myblog`
-3. Write `space login` and `space new`
-4. Wait until you project initiated
-5. Write `space push`
-6. Go to deta.space site go to Builder, go to your project, generate KEY
-7. Rename `_env` to `.env` and paste key from Deta
+2. Open the terminal and go to the folder `/detabd/myblog`
+3. Run `space login` and `space new`
+4. Wait until your project is initialized
+5. Run `space push`
+6. Go to the deta.space site, navigate to Builder, go to your project, and generate a KEY
+7. Rename `_env` to `.env` and paste the key from Deta
 8. Uncomment `VoteSection` and `CommentSection` in `/routes/[slug]/+page.svelte`
 
-## Super-advanced (integration with chatGPT): Quck basic auto moderation
-1. Add to `.env` `VITE_OPENAI_API_KEY=` you openai key
+## Super-advanced (Integration with chatGPT): Quick Basic Auto Moderation
 
-## Long Advanced SPAM detection
-1. Uncomment block "Advanced SPAM detection" in `src/routes/api/v1/post/[furl]/comments/+server.js`
-- Note, that long advanced SPAM detection may be timeouted, if chatGPT worked more than 60 sec.
-- And this is only premoderation feature, because of not so good, as expected. But may be usefull, as secondary helper for site owner.
-- In demo purposes spam comments shows in red. In real production you should hide them, of course.
-- Nearly 15:00 GMT is worst time for chatGPT, almost all requests timeouted
+1. Add your OpenAI key to `.env` as `VITE_OPENAI_API_KEY=`
+
+## Long Advanced SPAM Detection
+
+1. Uncomment the "Advanced SPAM detection" block in `src/routes/api/v1/post/[furl]/comments/+server.js`
+- Note that long advanced SPAM detection may timeout if chatGPT takes more than 60 seconds.
+- This is only a pre-moderation feature, as it is not as accurate as expected. However, it may be useful as a secondary helper for the site owner.
+- In the demo, spam comments are shown in red. In a real production environment, you should hide them, of course.
+- Around 15:00 GMT is the worst time for chatGPT, as almost all requests time out.
 
 ## Todo
+
 1. Optimize image loading
-2. Different image size for preview and for full article
+2. Different image sizes for previews and full articles
 3. Translate project page
-4. Move translations to separate t.js file, for more friedly start
+4. Move translations to a separate t.js file for a more user-friendly start
 5. ~~(done) Add option to change lang via localstorage or via domain (/en)~~
-6. Add option to full static pregeneration (only for domain-based i18n, because need change routing to /[lang]/)
-7. Add supporting custom themes
-8. ~~(done) Now we have domain-based i18n, add git-branch to alternative i18n with path (/[lang]/)~~
-9. Add meta-tag to all pages (not only for blog one)
-10. Set server-side limits: by ip, timing, size
+6. Add option for full static pregeneration (only for domain-based i18n, as it requires changing routing to /[lang]/)
+7. Add support for custom themes
+8. ~~(done) Now we have domain-based i18n, add a git branch for alternative i18n with path (/[lang]/)~~
+9. Add meta-tags to all pages (not only for blog posts)
+10. Set server-side limits: by IP, timing, size
 11. Visually mark post SPAM not only after page reload
-12. If long advanced SPAM detection fails due to timeout – mark this messages as suspicious
-13. Some features available only for domain-based i18n (like ai-moderation), but you can just copy files
+12. If long advanced SPAM detection fails due to timeout, mark these messages as suspicious
+13. Some features are only available for domain-based i18n (like AI moderation), but you can just copy files
