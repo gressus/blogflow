@@ -1,6 +1,8 @@
-# Multilingual Svelte Markdown Blog
+# Multilingual Svelte Markdown Blog (NoDB / DB & AI powered)
 
 Welcome to the Multilingual Svelte Markdown Blog, a database-free, user-friendly, and SEO-optimized blogging platform powered by Svelte. This project is designed for creating and managing multilingual blog posts with an intuitive folder structure and responsive mobile-friendly design.
+
+With DB you obtain additional features like: votes, comments, and two types of auto moderation, powered by AI
 
 ## Live Demo
 
