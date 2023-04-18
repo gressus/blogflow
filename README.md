@@ -33,8 +33,10 @@ This is example of path-based i18n: `yoursite.org/en` / `yoursite.org/kg`
 
 ## Advanced Features (required DB)
 
-- Up & Down voting for post (for this feature, you really need DB, we use for example Deta)
+For this feature and further, you really need DB, we use for example `Deta`:
+- Up & Down voting for post 
 - Comment posts
+- Preventing multiple voting by one user
 
 ## Super Advanced Features with AI (integration with chatGPT)
 
@@ -174,7 +176,7 @@ In this example we will use deta.space, you can use your own
 7. Add supporting custom themes
 8. ~~(done) Now we have domain-based i18n, add git-branch to alternative i18n with path (/[lang]/)~~
 9. Add meta-tag to all pages (not only for blog one)
-10. Set limits: by ip, timing, size
+10. Set server-side limits: by ip, timing, size
 11. Visually mark post SPAM not only after page reload
 12. If long advanced SPAM detection fails due to timeout – mark this messages as suspicious
 13. Some features available only for domain-based i18n (like ai-moderation), but you can just copy files
