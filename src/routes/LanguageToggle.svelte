@@ -4,10 +4,11 @@
   export let lang = 'en';
 
   const toggleLanguage = () => {
+    const currentPath = window.location.pathname;
     if (lang == "en") {
-      goto(`https://yoursite.kg`);
+      goto(`https://yoursite.kg${currentPath}`);
     } else if (lang == "kg") {
-      goto(`https://yoursite.com`);
+      goto(`https://yoursite.com${currentPath}`);
     }
   };
 </script>
