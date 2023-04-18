@@ -23,6 +23,11 @@ export async function PUT({ fetch, request, params, locals }) {
     comment.created_at = Date.now();
     comment.furl = furl;
 
+    const maxCommentLength = 1000;
+    if (comment.text.length > maxCommentLength) {
+      throw error(400);
+    }      
+
     if (import.meta.env.VITE_OPENAI_API_KEY) {
       let body = {
         input: comment.text,

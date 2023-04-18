@@ -12,6 +12,12 @@
 
   async function handleSubmit(event) {
     event.preventDefault();
+
+    if (comment.length > 1000) {
+      alert("Comment should not exceed 1000 characters.");
+      return;
+    }
+
     const formData = {
       name,
       email,
@@ -36,9 +42,9 @@
   }
 </script>
 <form on:submit="{handleSubmit}" class="send-comment-form">
-  <input type="text" placeholder="Your name" bind:value="{name}" required />
-  <input type="email" placeholder="Your email (will be hidden, no one will be able to see)" bind:value="{email}" required />
-  <textarea placeholder="Your comment" bind:value="{comment}" required></textarea>
+  <input type="text" placeholder="Your name*" bind:value="{name}" required />
+  <input type="email" placeholder="Your email (will be hidden, no one can see it)" bind:value="{email}" />
+  <textarea placeholder="Your comment*" bind:value="{comment}" required maxlength="1000"></textarea>
   <button type="submit" disabled="{isSubmitting}">
     {isSubmitting ? "Submitting..." : "Submit Comment"}
   </button>
