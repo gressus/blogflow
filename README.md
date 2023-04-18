@@ -5,9 +5,12 @@ Welcome to the Multilingual Svelte Markdown Blog, a database-free, user-friendly
 ## Live Demo
 
 Check out the production demo at [lazarevsky.com](https://www.lazarevsky.com) (with all features + advanced (Vote, Comments, AI auto premoderation: quick and long)). 
-This is example of domain-based i18n: lazarevsky.com / igor.kg
+This is example of domain-based i18n: `lazarevsky.com` / `igor.kg`
 
 Simplified demo w/o advanced features at [https://blogflow-sveltehack.vercel.app/](https://blogflow-sveltehack.vercel.app/). 
+
+Simplified demo w/o advanced features at [https://blogflow-pathbasedi18n.vercel.app/](https://blogflow-pathbasedi18n.vercel.app/). 
+This is example of path-based i18n: `yoursite.org/en` / `yoursite.org/kg`
 
 ## Features
 
